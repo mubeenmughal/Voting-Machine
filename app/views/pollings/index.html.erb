@@ -1,0 +1,10 @@
+<div class = "container text-center p-5">
+  <div class = "col justify-content-center">
+    <%= render 'polls', polls: @active_polls, type: "Active" %>
+    <%= render 'polls', polls: @coming_polls, type: "Coming" %>
+    <%= render 'polls', polls: @recent_polls, type: "Recent" %>
+  </div>
+  <% if current_user.admin? %>
+      <%= link_to 'Create polling',new_polling_path, class:"btn btn-danger" %>
+    <%end%>
+</div>

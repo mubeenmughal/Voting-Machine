@@ -1,0 +1,187 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+@import "bootstrap";
+
+$primary-color: #2FDD92;
+$nav-bar: #2F86A6;
+$secondary-color: #34BE82;
+#partyshow {
+	display: none;
+}
+.home-container {
+	color: white;
+  margin-top: 25px;
+  background-color: rgb(82, 84, 87);
+}
+.voter{
+	background-color: $primary-color;
+	color: black;
+}
+body {
+	color: black;
+	background: #f3f3f3;
+	font-family: 'Roboto', sans-serif;
+}
+.nav-color{
+  background-color: $nav-bar;
+}
+.form-control {
+	border-color: #eee;
+	min-height: 41px;
+	box-shadow: none !important;
+}
+.form-control:focus {
+	border-color: $primary-color;
+}
+.form-control, .btn {
+	border-radius: 3px;
+}
+.signup-form {
+	width: 500px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+.signup-form h2 {
+	color: #333;
+	margin: 0 0 30px 0;
+	display: inline-block;
+	padding: 0 30px 10px 0;
+	border-bottom: 3px solid #5cd3b4;
+}
+.signup-form form {
+	color: #999;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form .form-group row {
+	margin-bottom: 20px;
+}
+.signup-form label {
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 2;
+}
+.signup-form input[type="checkbox"] {
+	position: relative;
+	top: 1px;
+}
+.signup-form .btn {
+	font-size: 16px;
+	font-weight: bold;
+	background: $primary-color;
+	border: none;
+	margin-top: 20px;
+	min-width: 140px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: $secondary-color;
+	outline: none !important;
+}
+.signup-form a {
+	color: $primary-color;
+	text-decoration: underline;
+}
+.signup-form a:hover {
+	text-decoration: none;
+}
+.signup-form form a {
+	color: $primary-color;
+	text-decoration: none;
+}
+.signup-form form a:hover {
+	text-decoration: underline;
+}
+
+.flickr_pagination {
+  text-align: center;
+  padding: 0.3em;
+  cursor: default; }
+  .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+    padding: 0.2em 0.5em; }
+  .flickr_pagination .disabled {
+    color: #aaaaaa; }
+  .flickr_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: #ff0084; }
+  .flickr_pagination a {
+    border: 1px solid #dddddd;
+    color: #0063dc;
+    text-decoration: none; }
+    .flickr_pagination a:hover, .flickr_pagination a:focus {
+      border-color: #003366;
+      background: #0063dc;
+      color: white; }
+  .flickr_pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .flickr_pagination .previous_page, .flickr_pagination .next_page {
+    border-width: 2px; }
+  .flickr_pagination .previous_page {
+    margin-right: 1em; }
+  .flickr_pagination .next_page {
+    margin-left: 1em; }
+
+
+
+.profilecard {
+	border: none;
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	cursor: pointer
+}
+
+
+.fonts {
+	font-size: 29px
+}
+
+.social-list {
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	padding: 0
+}
+
+.social-list li {
+	padding: 10px;
+	color: $primary-color ;
+	font-size: 29px
+}
+
+.buttons button:nth-child(1) {
+	border: 1px solid $primary-color  !important;
+	color: $primary-color ;
+	height: 40px
+}
+
+.buttons button:nth-child(1):hover {
+	border: 1px solid $primary-color  !important;
+	color: #fff;
+	height: 40px;
+	background-color: $primary-color
+}
+
+.buttons button:nth-child(2) {
+	border: 1px solid $primary-color !important;
+	background-color: $primary-color;
+	color: #fff;
+	height: 40px
+}
+

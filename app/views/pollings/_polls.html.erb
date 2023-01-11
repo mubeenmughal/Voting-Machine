@@ -1,0 +1,33 @@
+<div class="container">
+  <div class = "col text-center">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"><%=type%> Pollings</th>
+        </tr>
+      </thead>
+      <tbody>
+            <% if polls.any?%>
+            <% polls.each do |poll|%>
+              <tr>
+                <td>
+                  start Time :<%=poll.start_time%> End Time : <%=poll.end_time %>
+                    <% if type == "Coming" %>
+                      <% if current_user.role == "admin"%>
+                      <%= link_to 'Edit', edit_polling_path(poll), class: "btn btn-success"%>
+                      <% end%>
+                      <%= link_to 'View', polling_path(poll), class: "btn btn-info"%>
+                    <% else%>
+                      <%= link_to 'View', polling_path(poll), class: "btn btn-info"%>
+                    <%end%>
+                </td>
+              </tr>
+              <%end%>
+              <%else%>
+              <tr> <td>---- No Pollings ----</td></tr>
+              <%end%>
+            </tbody>
+    </table>
+  </div>
+</div>
+

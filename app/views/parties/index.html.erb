@@ -1,0 +1,8 @@
+<h1 class="text-center mt-4">All parties</h1>
+
+<div class="d-flex my-5 text-center justify-content-center">
+  <%= render partial: "party_card", collection: @parties, as: :party %>
+</div>
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @parties, :container => false %>
+</div>

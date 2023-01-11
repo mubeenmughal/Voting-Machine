@@ -1,0 +1,27 @@
+<% if @winner_candidate %>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Winner candidate : <%=@winner_candidate.name %>
+      <p class="lead">Constituency :  <%= current_user.constituency.name%></p>
+      <p class="lead">Votes : <%= @votes%></p>
+    </div>
+  </div>
+ <h1 class="text-center"> All Candidates </h1>
+  <% @polling_result.each do |cand_id, votes| %>
+    <div class="container card">
+    <div class="card-header">
+      candidate : <%=  User.candidate_name(cand_id) %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">votes : <%= votes %></h5>
+    </div>
+  </div>
+  <% end %>
+<% elsif Polling.active_polls.include? @poll%>
+
+<div id="casted_vote">
+  <%= render 'castvote'%>
+</div>
+<% else %>
+  <div class="container text-center"><h1>----NO RESULT----</h1></div>
+<% end %>

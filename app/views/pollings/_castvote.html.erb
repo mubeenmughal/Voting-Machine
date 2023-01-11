@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">candidate name</th>
+              <th scope="col">cast a vote</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @candidates.each do |candidate| %>
+            <tr>
+              <td><%= link_to candidate.name, user_path(candidate)%></td>
+              <% voted_candidate = vote_casted_for(@poll) %>
+              <% if voted_candidate %>
+                <% if voted_candidate.eql?(candidate) %>
+                    <td>you voted</td>
+                <%else %>
+                <td>--------</td>
+                <%end%>
+              <% else %>
+              <td><%= button_to "cast vote",votes_path(cand_id: candidate.id,poll_id: @poll.id),method: "post", remote: true , class:"btn voter btn-lg"%></td>
+              <%end%>
+            </tr>
+            <% end %>
+          </tbody>
+  </table>
+</div>
+

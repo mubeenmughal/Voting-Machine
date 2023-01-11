@@ -1,0 +1,25 @@
+<% if current_user.role == "candidate" %>
+  <% Polling.recent_polls.each do |poll|%>
+  <% next if poll.votes.empty? %>
+    <% if poll.winner_candidate(current_user).first == current_user.id %>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Congratulation for winning in <%= current_user.constituency.name %></h1>
+          <p class="lead">polling : Start Time <%=  poll.start_time%> End Time <%=  poll.end_time%></p>
+          <p class="lead">Votes : <%=  poll.winner_candidate(current_user).second%></p>
+        </div>
+      </div>
+    <%end%>
+  <%end %>
+<%end%>
+<div class="container p-5">
+  <div class="jumbotron text-center home-container">
+    <h1 class="display-4">Voting Machine</h1>
+    <p class="lead">This is a simple voting machine in which a voter can cast a vote in his constituency and can see the result after polling ended.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <%= link_to 'View polling',pollings_path, class:"btn btn-success" %>
+    </p>
+  </div>
+</div>

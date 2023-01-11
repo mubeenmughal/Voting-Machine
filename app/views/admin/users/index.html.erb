@@ -1,0 +1,12 @@
+<div class="container p-5">
+  <h1>Voters</h1>
+  <ul class="list-group">
+    <% @users.each do |user|%>
+      <%if @users.nil? %>
+        <li class="list-group-item">no voters</li>
+      <%else%>
+          <li class="list-group-item">Name: <%= user.name%> in <%= user.constituency.name%></li>
+      <%end%>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,40 @@
+<div class="signup-form">
+    <%= form_for(resource, as: resource_name, url: invitation_path(resource_name),class:"form-horizontal", html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+          <%= f.hidden_field :invitation_token, readonly: true %>
+      	<div class="row">
+        	<div class="col-8 offset-2">
+          <h2><%= "Set your Profile" %></h2>
+          </div>
+        </div>
+  <% if f.object.class.require_password_on_accepting %>
+        <div class="form-group row">
+          <%= f.label :name , class: "col-form-label col-4" %>
+          <div class="col-10">
+            <%= f.text_field :name, autofocus: true, autocomplete: "email", class: "form-control ", placeholder: "Enter name",required: true %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :picture, class: "col-form-label col-4" %>
+          <div class="col-10">
+            <%= f.file_field :picture,direct_upload: true, accept:"image/png, image/gif, image/jpeg", class: "form-control"%>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :password, class: "col-form-label col-4" %>
+          <div class="col-10">
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "6 characters minimum"%>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :password_confirmation, class: "col-form-label col-4" %>
+          <div class="col-10">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "6 characters minimum"%>
+          </div>
+        </div>
+  <% end %>
+		<div class="form-group row">
+			<div class="col-8 offset-4">
+      <%= f.submit 'Update', class:"btn btn-primary btn-lg" %>
+			</div>
+    <% end %>

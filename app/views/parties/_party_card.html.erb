@@ -1,0 +1,11 @@
+<div class="card m-2" style="width: 18rem;">
+  <% if party.symbol.attached?%>
+  <%= cl_image_tag(party.symbol.key, class:"card-img-top") %>
+  <% end%>
+  <div class="card-body">
+    <h5 class="card-title"><%= party.name%></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <%= link_to 'Edit', edit_user_party_path(current_user,party), class:"btn btn-primary"%>
+    <%= link_to 'DELETE', user_party_path(current_user,party),method: :delete, class:"btn btn-danger" , data: {confirm: "Are you sure?"}%>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container p-5">
+  <h1>Voters</h1>
+  <ul class="list-group">
+  <% if current_user.role == "admin"%>
+    <% @constituencies.each do |constituency|%>
+    <li class="list-group-item voter">In <%=constituency.name%> constituency</li>
+      <%if constituency.users.nil? %>
+        <li class="list-group-item">no voters</li>
+      <%else%>
+        <% constituency.users.each do |voter|%>
+          <li class="list-group-item">Name: <%= voter.name%></li>
+          <% end %>
+      <%end%>
+    <% end %>
+  <%else%>
+      <%if @constituency.users.nil? %>
+        <li class="list-group-item">no voters</li>
+      <%else%>
+        <% @constituency.users.each do |voter|%>
+          <li class="list-group-item">Name: <%= voter.name%></li>
+          <% end %>
+      <%end%>
+    
+  <%end%>
+  </ul>
+</div>

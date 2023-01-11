@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">candidate name</th>
+        <th scope="col">status</th>
+        <th scope="col">party name</th>
+        <th colspan="3" scope="col" >action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @candidateships.each do |candidateship| %>
+        <tr>
+          <td><%= candidateship.user.name%></td>
+          <td><%= candidateship.status%></td>
+          <td><%= candidateship.party.name %></td>
+          <% if candidateship.status == "pending" %>
+            <td><%= button_to "Accept", user_candidateship_path(current_user, candidateship, status: "accepted",party_id: candidateship.party_id), method: :patch, class:"btn btn-success" %></td>
+            <td><%= button_to "Reject", user_candidateship_path(current_user, candidateship, status:"rejected"), method: :patch , class:"btn btn-danger" %></td>
+          <% end %>
+          <td><%= button_to "Delete", user_candidateship_path(current_user, candidateship), method: :delete , class:"btn btn-danger" , data: {confirm: "Are you sure?"} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

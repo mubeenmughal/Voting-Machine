@@ -1,0 +1,18 @@
+<div class="container">
+  <% @constituencies.each do |constituency| %>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card">
+          <div class="card-header">
+            Constituency
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= constituency.name %></h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <%= link_to 'Edit Constituency', edit_constituency_path(constituency) , class:'btn btn-primary'%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
